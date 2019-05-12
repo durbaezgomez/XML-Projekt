@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<szpital>
+	<pracownicy>
+		<lekarze>
+			<lekarz plec = 'm' placa = '4000' oddzial = 'ChorobyWewnetrzne'>
+				<imie>Adam</imie>
+				<nazwisko>Adamski</nazwisko>
+				<specjalizacja>internista</specjalizacja>
+			</lekarz>
+			<lekarz plec = 'k' placa = '3500' oddzial = 'Nefrologia'>
+				<imie>Blazej</imie>
+				<nazwisko>Babacki</nazwisko>
+				<specjalizacja>hepatolog</specjalizacja>
+			</lekarz>
+			<lekarz plec = 'k' placa = '4200' oddzial = 'Kardiologia'>
+				<imie>Cecylia</imie>
+				<nazwisko>Czasowa</nazwisko>
+				<specjalizacja>kardiolog</specjalizacja>
+			</lekarz>
+			<lekarz plec = 'k' placa = '3600' oddzial = 'Chirurgia'>
+				<imie>Danuta</imie>
+				<nazwisko>Debska</nazwisko>
+				<specjalizacja>gastrolog</specjalizacja>
+			</lekarz>
+		</lekarze>
+
+		<pielegniarki>
+			<pielegniarka oddzial = 'ChorobyWewnetrzne'>
+				<imie>Karolina</imie>
+				<nazwisko>Smiala</nazwisko>
+				<staz>3 lata</staz>
+				<godzinyPracy>7.00-17.00</godzinyPracy>
+			</pielegniarka>
+			<pielegniarka oddzial = 'Anestezjologia'>
+				<imie>Anna</imie>
+				<nazwisko>Testowa</nazwisko>
+				<staz>7 lat</staz>
+				<godzinyPracy>7.00-17.00</godzinyPracy>
+			</pielegniarka>
+			<pielegniarka oddzial = 'Chirurgia'>
+				<imie>Agnieszka</imie>
+				<nazwisko>Niewiadoma</nazwisko>
+				<staz>10 lat</staz>
+				<godzinyPracy>17.00-7.00</godzinyPracy>
+			</pielegniarka>
+			<pielegniarka oddzial = 'Kardiologia'>
+				<imie>Janina</imie>
+				<nazwisko>Niecna</nazwisko>
+				<staz>12 lat</staz>
+				<godzinyPracy>17.00-7.00</godzinyPracy>
+			</pielegniarka>
+		</pielegniarki>
+
+		<inni>
+			<pracownik plec = 'm' placa = '1800'>
+				<imie>Janusz</imie>
+				<nazwisko>Karolak</nazwisko>
+				<wiek>45</wiek>
+				<stanowisko>wozny</stanowisko>
+			</pracownik>
+			<pracownik plec = 'k' placa = '1700'>
+				<imie>Magda</imie>
+				<nazwisko>Jozwiak</nazwisko>
+				<wiek>32</wiek>
+				<stanowisko>sprzataczka</stanowisko>
+			</pracownik>
+			<pracownik plec = 'k' placa = '1700'>
+				<imie>Kamila</imie>
+				<nazwisko>Nowak</nazwisko>
+				<wiek>47</wiek>
+				<stanowisko>sprzataczka</stanowisko>
+			</pracownik>
+		</inni>
+	</pracownicy>
+
+	<pacjenci>
+		<pacjent plec = 'm' oddzial = 'ChorobyWewnetrzne'>
+			<imie>Jerzy</imie>
+			<nazwisko>Nowak</nazwisko>
+			<wiek>67</wiek>
+			<leki>
+				<lek>
+					<nazwa>Buderin</nazwa>
+					<dawka>3 x 1 tabletka</dawka>
+				</lek>
+				<lek>
+					<nazwa>Filytol</nazwa>
+					<dawka>1 x 1 tabletka</dawka>
+				</lek>
+			</leki>
+		</pacjent>
+		<pacjent plec = 'k' oddzial = 'Kardiologia'>
+			<imie>Zofia</imie>
+			<nazwisko>Papacka</nazwisko>
+			<wiek>60</wiek>
+			<leki>
+				<lek>
+					<nazwa>Meriozyna</nazwa>
+					<dawka>2 x 1 tabletka</dawka>
+				</lek>
+				<lek>
+					<nazwa>Buderin</nazwa>
+					<dawka>2 x 1 tabletka</dawka>
+				</lek>
+			</leki>
+		</pacjent>
+		<pacjent plec = 'm' oddzial = 'Chirurgia'>
+			<imie>Andrzej</imie>
+			<nazwisko>Kozak</nazwisko>
+			<wiek>53</wiek>
+			<leki>
+				<lek>
+					<nazwa>Gatoryna</nazwa>
+					<dawka>2 x 1 tabletka</dawka>
+				</lek>
+				<lek>
+					<nazwa>Sentum</nazwa>
+					<dawka>1 x 1 tabletka</dawka>
+				</lek>
+			</leki>
+		</pacjent>
+	</pacjenci>
+
+	<sprzet>
+		<rodzaje>
+			<diagnostyka>
+			</diagnostyka>
+			<chirurgia>
+			</chirurgia>
+			<komputery>
+				<stacjonarne>
+					<produkt stan='dobry' producent='Dell'>
+						<model>Imagine</model>
+						<rocznik>2012</rocznik>
+					</produkt>
+					<produkt stan='dobry' producent='Acer'>
+						<model>Vostro</model>
+						<rocznik>2013</rocznik>
+					</produkt>
+				</stacjonarne>
+				<laptopy>
+					<produkt stan='sredni' producent='Dell'>
+						<model>Matebook</model>
+						<rocznik>2008</rocznik>
+					</produkt>
+					<produkt stan='doWymiany' producent='Acer'>
+						<model>Matebook</model>
+						<rocznik>2005</rocznik>
+					</produkt>
+				</laptopy>
+			</komputery>
+		</rodzaje>
+	</sprzet>
+</szpital>
