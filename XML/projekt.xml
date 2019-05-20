@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type="text/css" href="../CSS/projekt.css" ?>
 
 <szpital>
 	<pracownicy>
 		<lekarze>
-			<lekarz plec = 'm' placa = '4000' oddzial = 'ChorobyWewnetrzne'>
+			<lekarz plec = 'm' placa = '4000' oddzial = 'Choroby Wewnetrzne'>
 				<imie>Adam</imie>
 				<nazwisko>Adamski</nazwisko>
 				<specjalizacja>internista</specjalizacja>
@@ -26,7 +27,7 @@
 		</lekarze>
 
 		<pielegniarki>
-			<pielegniarka oddzial = 'ChorobyWewnetrzne'>
+			<pielegniarka oddzial = 'Choroby Wewnetrzne'>
 				<imie>Karolina</imie>
 				<nazwisko>Smiala</nazwisko>
 				<staz>3 lata</staz>
@@ -51,31 +52,10 @@
 				<godzinyPracy>17.00-7.00</godzinyPracy>
 			</pielegniarka>
 		</pielegniarki>
-
-		<inni>
-			<pracownik plec = 'm' placa = '1800'>
-				<imie>Janusz</imie>
-				<nazwisko>Karolak</nazwisko>
-				<wiek>45</wiek>
-				<stanowisko>wozny</stanowisko>
-			</pracownik>
-			<pracownik plec = 'k' placa = '1700'>
-				<imie>Magda</imie>
-				<nazwisko>Jozwiak</nazwisko>
-				<wiek>32</wiek>
-				<stanowisko>sprzataczka</stanowisko>
-			</pracownik>
-			<pracownik plec = 'k' placa = '1700'>
-				<imie>Kamila</imie>
-				<nazwisko>Nowak</nazwisko>
-				<wiek>47</wiek>
-				<stanowisko>sprzataczka</stanowisko>
-			</pracownik>
-		</inni>
 	</pracownicy>
 
 	<pacjenci>
-		<pacjent plec = 'm' oddzial = 'ChorobyWewnetrzne'>
+		<pacjent plec = 'm' oddzial = 'Choroby Wewnetrzne'>
 			<imie>Jerzy</imie>
 			<nazwisko>Nowak</nazwisko>
 			<wiek>67</wiek>

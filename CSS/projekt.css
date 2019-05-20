@@ -1,0 +1,102 @@
+szpital{
+	font-family: Helvetica;
+	background-color: #dedede
+}
+
+lekarze:before{
+	content: "LEKARZE:"
+}
+pielegniarki:before{
+	content: "PIELEGNIARKI:"
+}
+pacjenci:before{
+	content: "PACJENCI:"
+}
+
+lekarze, pielegniarki, pacjenci, diagnostyka, chirurgia, komputery{
+
+	display: inline;
+	float: left;
+	width: 30%;
+	border: solid #a2a8d3;
+	margin: 6px;
+	filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+	background-image:
+    linear-gradient(72deg,red, #f06d06);
+}
+
+lekarz, pielegniarka, pacjent{
+	display: block;
+	padding: 3px;
+	border: solid #a2a8d3;
+	margin: 4px;
+
+}
+
+lekarz[oddzial='Choroby Wewnetrzne']{
+	border: solid #C5FDC9;
+}
+
+lekarz, pacjent{
+	background-color: #FDCEA2
+}
+pielegniarka{
+	background-color: #C5FDC9
+}
+
+nazwisko, nazwa{
+	font-size: 15px;
+	font-weight: bold; 
+}
+
+staz:before {
+	content: "staż: ";
+}
+
+staz:after {
+	content: ", ";
+}
+
+imie, staz, godzinyPracy, wiek{
+	font-size: 12px;
+}
+
+godzinyPracy:before {
+	content: "godz. pracy: ";
+}
+
+specjalizacja{
+	font-size: 15px;
+	color: #a2a8d3;
+	font-weight: bold; 
+}
+specjalizacja:hover{
+	color: red;
+}
+
+wiek:before{
+	content: "wiek: "
+}
+
+leki:before{
+	content: "Leki: "
+}
+
+leki, lek, sprzet{
+	display: block
+}
+
+sprzet:before{
+	content: "SPRZET: "
+}
+
+sprzet{
+	display: block;
+}
+
+
+
+
+
+
+
