@@ -105,8 +105,33 @@
 	<sprzet>
 		<rodzaje>
 			<diagnostyka>
+				<produkt producent='GC MEDIS'>
+					<model>CERA-CHECK</model>
+					<rocznik>2014</rocznik>
+				</produkt>
+				<produkt producent='PROMEDICA'>
+					<model>UASure</model>
+					<rocznik>2012</rocznik>
+
+				</produkt>
+				<produkt producent='CU MEDICS'>
+					<model>iPAD SP1</model>
+					<rocznik>2017</rocznik>
+				</produkt>
 			</diagnostyka>
 			<chirurgia>
+				<produkt producent='HEARTSTINE'>
+					<model>SAMARITHAN PAD</model>
+					<rocznik>2010</rocznik>
+				</produkt>
+				<produkt producent='PROMEDICA'>
+					<model>ZOLL AED PLUS</model>
+					<rocznik>2012</rocznik>
+				</produkt>
+				<produkt producent='CSMEDICUS'>
+					<model>HALO355</model>
+					<rocznik>2015</rocznik>
+				</produkt>
 			</chirurgia>
 			<komputery>
 				<stacjonarne>

@@ -1,18 +1,88 @@
 szpital{
-	font-family: Helvetica;
-	background-color: #dedede
+	font-family: "Comic Sans MS";
+	background-color: #dedede;
 }
 
+/*COUNTERS*/
+lekarze{
+	counter-reset: lek;
+}
+pielegniarki{
+	counter-reset: pie;
+}
+pacjenci{
+	counter-reset: pac;
+}
+lekarz:before{
+	counter-increment: lek;
+	content: counter(lek);
+}
+pielegniarka:before{
+	counter-increment: pie;
+	content: counter(pie);
+}
+pacjent:before{
+	counter-increment: pac;
+	content: counter(pac);
+}
+diagnostyka{
+	counter-reset: diag;
+}
+chirurgia{
+	counter-reset: chir;
+}
+komputery{
+	counter-reset: komp;
+}
+diagnostyka>produkt:before{
+	counter-increment: diag;
+	content: counter(diag);
+}
+chirurgia>produkt:before{
+	counter-increment: chir;
+	content: counter(chir);
+}
+komputery>stacjonarne>produkt:before, komputery>laptopy>produkt:before{
+	counter-increment: komp;
+	content: counter(komp);
+}
+
+/*BEFORE AFTER*/
 lekarze:before{
-	content: "LEKARZE:"
+	content: "LEKARZE:";
 }
 pielegniarki:before{
-	content: "PIELEGNIARKI:"
+	content: "PIELĘGNIARKI:";
 }
 pacjenci:before{
-	content: "PACJENCI:"
+	content: "PACJENCI:";
+}
+wiek:before{
+	content: "wiek: ";
+}
+leki:before{
+	content: "Leki: ";
+}
+diagnostyka:before{
+	content: "Diagnostyka:";
+}
+chirurgia:before{
+	content: "Chirurgia:";
+}
+komputery:before{
+	content: "Komputery:";
+}
+staz:before {
+	content: "staż: ";
+}
+godzinyPracy:before {
+	content: "godz. pracy: ";
+}
+staz:after {
+	content: ", ";
 }
 
+/*POSITIONING, COLORS, FONTS ETC*/
 lekarze, pielegniarki, pacjenci, diagnostyka, chirurgia, komputery{
 
 	display: inline;
@@ -21,82 +91,45 @@ lekarze, pielegniarki, pacjenci, diagnostyka, chirurgia, komputery{
 	border: solid #a2a8d3;
 	margin: 6px;
 	filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
-	background-image:
-    linear-gradient(72deg,red, #f06d06);
+	transition: background 0.5s ease-out;
+	-webkit-transition: background-color 2s ease-out;
+ 	-moz-transition: background-color 2s ease-out;
+	-o-transition: background-color 2s ease-out;
+  	transition: all 2s ease-out;
+	background-image: linear-gradient(72deg,#ffa952, #feffdf);
 }
-
-lekarz, pielegniarka, pacjent{
+lekarze:hover, pielegniarki:hover, pacjenci:hover, diagnostyka:hover, chirurgia:hover, komputery:hover{
+	background: red;
+}
+lekarz, pielegniarka, pacjent,produkt{
 	display: block;
 	padding: 3px;
 	border: solid #a2a8d3;
 	margin: 4px;
-
+	background-color: #FDCEA2
+}
+leki, lek, sprzet{
+	display: block;
+}
+nazwisko, nazwa, model, specjalizacja{
+	font-size: 15px;
+	font-weight: bold; 
+}
+imie, nazwisko, model{
+	text-decoration: underline;
+}
+imie, staz, godzinyPracy, wiek, rocznik{
+	font-size: 12px;
+}
+specjalizacja{
+	color: #a2a8d3;
 }
 
+/*SEPARATE RULES*/
 lekarz[oddzial='Choroby Wewnetrzne']{
 	border: solid #C5FDC9;
 }
-
-lekarz, pacjent{
-	background-color: #FDCEA2
+nazwisko:hover, specjalizacja:hover{
+    color:#f00;
+    transition: all 0.5s ease;
 }
-pielegniarka{
-	background-color: #C5FDC9
-}
-
-nazwisko, nazwa{
-	font-size: 15px;
-	font-weight: bold; 
-}
-
-staz:before {
-	content: "staż: ";
-}
-
-staz:after {
-	content: ", ";
-}
-
-imie, staz, godzinyPracy, wiek{
-	font-size: 12px;
-}
-
-godzinyPracy:before {
-	content: "godz. pracy: ";
-}
-
-specjalizacja{
-	font-size: 15px;
-	color: #a2a8d3;
-	font-weight: bold; 
-}
-specjalizacja:hover{
-	color: red;
-}
-
-wiek:before{
-	content: "wiek: "
-}
-
-leki:before{
-	content: "Leki: "
-}
-
-leki, lek, sprzet{
-	display: block
-}
-
-sprzet:before{
-	content: "SPRZET: "
-}
-
-sprzet{
-	display: block;
-}
-
-
-
-
-
-
-
