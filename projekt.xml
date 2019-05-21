@@ -1,4 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE szpital SYSTEM "projekt.dtd">
 <?xml-stylesheet type="text/css" href="../CSS/projekt.css" ?>
 
 <szpital>

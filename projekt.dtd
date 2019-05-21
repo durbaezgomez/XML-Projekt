@@ -1,0 +1,51 @@
+<!ENTITY % pcd "#PCDATA">
+<!ENTITY % rq "#REQUIRED">
+<!ENTITY % imp "#IMPLIED">
+<!ENTITY % cd "CDATA">
+
+<!ELEMENT szpital (pracownicy, pacjenci, sprzet)>
+<!ELEMENT pracownicy (lekarze, pielegniarki)>
+
+<!ELEMENT lekarze (lekarz*)>
+<!ELEMENT lekarz (imie, nazwisko, specjalizacja)>
+
+<!ATTLIST lekarz plec (m|k) %imp; >
+<!ATTLIST lekarz placa NMTOKEN %rq;>
+<!ATTLIST lekarz oddzial NMTOKENS %imp;>
+
+<!ELEMENT specjalizacja (%pcd;)>
+
+<!ELEMENT pielegniarki (pielegniarka*)>
+<!ELEMENT pielegniarka (imie, nazwisko, staz, godzinyPracy)>
+<!ATTLIST pielegniarka oddzial %cd; %rq;>
+<!ELEMENT staz (%pcd;) >
+<!ELEMENT godzinyPracy (%pcd;)>
+
+<!ELEMENT pacjenci (pacjent*)>
+<!ELEMENT pacjent (imie, nazwisko, wiek, leki)>
+<!ATTLIST pacjent plec (m|k) %imp; >
+<!ATTLIST pacjent oddzial %cd; %rq;>
+<!ELEMENT wiek (%pcd;)>
+<!ELEMENT leki (lek*)>
+<!ELEMENT lek (nazwa, dawka)>
+<!ELEMENT nazwa (%pcd;)>
+<!ELEMENT dawka (%pcd;)>
+
+<!ELEMENT sprzet (rodzaje)>
+<!ELEMENT rodzaje (diagnostyka, chirurgia, komputery)>
+
+<!ELEMENT diagnostyka (produkt*)>
+<!ELEMENT chirurgia (produkt*)>
+
+<!ELEMENT komputery (stacjonarne, laptopy)>
+<!ELEMENT stacjonarne (produkt*)>
+<!ELEMENT laptopy (produkt*)>
+
+<!ELEMENT produkt (model, rocznik)>
+<!ATTLIST produkt stan %cd; "dobry">
+<!ATTLIST produkt producent %cd; %imp; >
+<!ELEMENT model (%pcd;)>
+<!ELEMENT rocznik (%pcd;)>
+
+<!ELEMENT imie (%pcd;)>
+<!ELEMENT nazwisko (%pcd;)>

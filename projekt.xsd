@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd=
+"http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="szpital">
+		<xsd:complexType>
+			<xsd:element name="pracownicy">
+				<xsd:complexType>
+					<xsd:element name="lekarze">
+						<xsd:complexType>
+							<xsd:element name="imie">
+								<xsd:complexType>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="nazwisko">
+								<xsd:complexType>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="specjalizacja">
+								<xsd:complexType>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="pielegniarki">
+						<xsd:complexType>
+							<xsd:element name="imie">
+								<xsd:complexType>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="nazwisko">
+								<xsd:complexType>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="staz">
+								<xsd:complexType>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="godzinyPracy">
+								<xsd:complexType>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="pacjenci">
+						<xsd:complexType>
+							<xsd:element name="imie">
+								<xsd:complexType>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="nazwisko">
+								<xsd:complexType>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="wiek">
+								<xsd:complexType>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="leki">
+								<xsd:complexType>
+									<xsd:element name="nazwa">
+										<xsd:complexType>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element name="dawka">
+										<xsd:complexType>
+										</xsd:complexType>
+									</xsd:element>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="sprzet">
+				<xsd:complexType>
+					<xsd:element name="diagnostyka">
+						<xsd:complexType>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="chirurgia">
+						<xsd:complexType>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="komputery">
+						<xsd:complexType>
+							<xsd:element name="stacjonarne">
+								<xsd:complexType>
+									<xsd:element name="produkt">
+										<xsd:complexType>
+											<xsd:element name="model">
+												<xsd:complexType>
+												</xsd:complexType>
+											</xsd:element>
+											<xsd:element name="rocznik">
+												<xsd:complexType>
+												</xsd:complexType>
+											</xsd:element>
+										</xsd:complexType>
+									</xsd:element>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="laptopy">
+								<xsd:complexType>
+									<xsd:element name="produkt">
+										<xsd:complexType>
+											<xsd:element name="model">
+												<xsd:complexType>
+												</xsd:complexType>
+											</xsd:element>
+											<xsd:element name="rocznik">
+												<xsd:complexType>
+												</xsd:complexType>
+											</xsd:element>
+										</xsd:complexType>
+									</xsd:element>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
