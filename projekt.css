@@ -60,6 +60,9 @@ pacjenci:before{
 wiek:before{
 	content: "wiek: ";
 }
+wiek:after{
+	content: " lat(a)";
+}
 leki:before{
 	content: "Leki: ";
 }
@@ -79,7 +82,7 @@ godzinyPracy:before {
 	content: "godz. pracy: ";
 }
 staz:after {
-	content: ", ";
+	content: " lat(a), ";
 }
 
 /*POSITIONING, COLORS, FONTS ETC*/

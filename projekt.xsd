@@ -2,125 +2,113 @@
 <xsd:schema xmlns:xsd=
 "http://www.w3.org/2001/XMLSchema">
 
-	<xsd:element name="szpital">
-		<xsd:complexType>
-			<xsd:element name="pracownicy">
-				<xsd:complexType>
-					<xsd:element name="lekarze">
-						<xsd:complexType>
-							<xsd:element name="imie">
-								<xsd:complexType>
-								</xsd:complexType>
-							</xsd:element>
-							<xsd:element name="nazwisko">
-								<xsd:complexType>
-								</xsd:complexType>
-							</xsd:element>
-							<xsd:element name="specjalizacja">
-								<xsd:complexType>
-								</xsd:complexType>
-							</xsd:element>
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="pielegniarki">
-						<xsd:complexType>
-							<xsd:element name="imie">
-								<xsd:complexType>
-								</xsd:complexType>
-							</xsd:element>
-							<xsd:element name="nazwisko">
-								<xsd:complexType>
-								</xsd:complexType>
-							</xsd:element>
-							<xsd:element name="staz">
-								<xsd:complexType>
-								</xsd:complexType>
-							</xsd:element>
-							<xsd:element name="godzinyPracy">
-								<xsd:complexType>
-								</xsd:complexType>
-							</xsd:element>
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="pacjenci">
-						<xsd:complexType>
-							<xsd:element name="imie">
-								<xsd:complexType>
-								</xsd:complexType>
-							</xsd:element>
-							<xsd:element name="nazwisko">
-								<xsd:complexType>
-								</xsd:complexType>
-							</xsd:element>
-							<xsd:element name="wiek">
-								<xsd:complexType>
-								</xsd:complexType>
-							</xsd:element>
-							<xsd:element name="leki">
-								<xsd:complexType>
-									<xsd:element name="nazwa">
-										<xsd:complexType>
-										</xsd:complexType>
-									</xsd:element>
-									<xsd:element name="dawka">
-										<xsd:complexType>
-										</xsd:complexType>
-									</xsd:element>
-								</xsd:complexType>
-							</xsd:element>
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element name="sprzet">
-				<xsd:complexType>
-					<xsd:element name="diagnostyka">
-						<xsd:complexType>
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="chirurgia">
-						<xsd:complexType>
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="komputery">
-						<xsd:complexType>
-							<xsd:element name="stacjonarne">
-								<xsd:complexType>
-									<xsd:element name="produkt">
-										<xsd:complexType>
-											<xsd:element name="model">
-												<xsd:complexType>
-												</xsd:complexType>
-											</xsd:element>
-											<xsd:element name="rocznik">
-												<xsd:complexType>
-												</xsd:complexType>
-											</xsd:element>
-										</xsd:complexType>
-									</xsd:element>
-								</xsd:complexType>
-							</xsd:element>
-							<xsd:element name="laptopy">
-								<xsd:complexType>
-									<xsd:element name="produkt">
-										<xsd:complexType>
-											<xsd:element name="model">
-												<xsd:complexType>
-												</xsd:complexType>
-											</xsd:element>
-											<xsd:element name="rocznik">
-												<xsd:complexType>
-												</xsd:complexType>
-											</xsd:element>
-										</xsd:complexType>
-									</xsd:element>
-								</xsd:complexType>
-							</xsd:element>
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:complexType>
-			</xsd:element>
-		</xsd:complexType>
-	</xsd:element>
+	<xsd:element name="szpital" type="typ_szpital"/>
+
+	<xsd:complexType name="typ_szpital">
+		<xsd:sequence>
+			<xsd:element name="pracownicy" type='typ_pracownicy'/>
+			<xsd:element name="sprzet" type="type_sprzet"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name='typ_pracownicy'>
+		<xsd:sequence>
+			<xsd:element name="lekarze" type='typ_lekarze'/>
+			<xsd:element name="pielegniarki" type="typ_pielegniarki"/>
+			<xsd:element name="pacjenci" type="typ_pacjenci"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name='typ_lekarze'>
+		<xsd:sequence>
+			<xsd:element name="lekarz" type="typ_lekarz" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name='typ_lekarz'>
+		<xsd:sequence>
+			<xsd:element name="imie" type="xsd:string"/>
+			<xsd:element name="nazwisko" type="xsd:string"/>
+			<xsd:element name="specjalizacja" type="xsd:string"/>
+		</xsd:sequence>
+		<xsd:attribute name="plec" type="typ_plec" use="required"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="typ_pielegniarki">
+		<xsd:sequence>
+			<xsd:element name="pielegniarka" type="typ_pielegniarka"/>	
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="typ_pielegniarka">
+		<xsd:sequence>
+			<xsd:element name="imie" type="xsd:string"/>
+			<xsd:element name="nazwisko" type="xsd:string"/>
+			<xsd:element name="staz" type="xsd:integer"/>
+			<xsd:element name="godzinyPracy" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name='typ_pacjenci'>
+		<xsd:sequence>
+			<xsd:element name="pacjent" type="typ_pacjent"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="typ_pacjent">
+		<xsd:sequence>
+			<xsd:element name="imie" type="xsd:string"/>
+			<xsd:element name="nazwisko" type="xsd:string"/>
+			<xsd:element name="wiek" type="xsd:integer"/>
+			<xsd:element name="leki" type="typ_leki"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="typ_leki">
+		<xsd:sequence>
+			<xsd:element name="nazwa" type="xsd:string"/>
+			<xsd:element name="dawka" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="typ_sprzet">
+		<xsd:sequence>
+			<xsd:element name="diagnostyka" type="typ_produkty"/>
+			<xsd:element name="chirurgia" type="typ_produkty"/>
+			<xsd:element name="komputery" type="typ_komputery"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="typ_produkty">
+		<xsd:sequence>
+			<xsd:element name="produkt" type="typ_produkt" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="typ_komputery">
+		<xsd:sequence>
+			<xsd:element name="stacjonarne" type="typ_produkty"/>
+			<xsd:element name="laptopy" type="typ_produkty"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="typ_produkt">
+		<xsd:sequence>
+			<xsd:element name="model" type="xsd:string"/>
+			<xsd:element name="rocznik" type="xsd:positiveInteger"/> 
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="typ_plec">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="k{1}|m{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="typ_placa">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[1-9]+[0-9]*PLN"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 
 </xsd:schema>

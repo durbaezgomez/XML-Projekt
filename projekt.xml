@@ -1,26 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE szpital SYSTEM "projekt.dtd">
-<?xml-stylesheet type="text/css" href="../CSS/projekt.css" ?>
+<?xml-stylesheet type="text/css" href="projekt.css" ?>
 
 <szpital>
 	<pracownicy>
 		<lekarze>
-			<lekarz plec = 'm' placa = '4000' oddzial = 'Choroby Wewnetrzne'>
+			<lekarz plec = 'm' placa = '4000PLN' oddzial = 'Choroby Wewnetrzne'>
 				<imie>Adam</imie>
 				<nazwisko>Adamski</nazwisko>
 				<specjalizacja>internista</specjalizacja>
 			</lekarz>
-			<lekarz plec = 'k' placa = '3500' oddzial = 'Nefrologia'>
+			<lekarz plec = 'k' placa = '3500PLN' oddzial = 'Nefrologia'>
 				<imie>Blazej</imie>
 				<nazwisko>Babacki</nazwisko>
 				<specjalizacja>hepatolog</specjalizacja>
 			</lekarz>
-			<lekarz plec = 'k' placa = '4200' oddzial = 'Kardiologia'>
+			<lekarz plec = 'k' placa = '4200PLN' oddzial = 'Kardiologia'>
 				<imie>Cecylia</imie>
 				<nazwisko>Czasowa</nazwisko>
 				<specjalizacja>kardiolog</specjalizacja>
 			</lekarz>
-			<lekarz plec = 'k' placa = '3600' oddzial = 'Chirurgia'>
+			<lekarz plec = 'k' placa = '3600PLN' oddzial = 'Chirurgia'>
 				<imie>Danuta</imie>
 				<nazwisko>Debska</nazwisko>
 				<specjalizacja>gastrolog</specjalizacja>
@@ -28,28 +28,28 @@
 		</lekarze>
 
 		<pielegniarki>
-			<pielegniarka oddzial = 'Choroby Wewnetrzne'>
+			<pielegniarka oddzial = 'Choroby Wewnetrzne' nadgodziny='true'>
 				<imie>Karolina</imie>
 				<nazwisko>Smiala</nazwisko>
-				<staz>3 lata</staz>
+				<staz>3</staz>
 				<godzinyPracy>7.00-17.00</godzinyPracy>
 			</pielegniarka>
-			<pielegniarka oddzial = 'Anestezjologia'>
+			<pielegniarka oddzial = 'Anestezjologia' nadgodziny='false'>
 				<imie>Anna</imie>
 				<nazwisko>Testowa</nazwisko>
-				<staz>7 lat</staz>
+				<staz>7</staz>
 				<godzinyPracy>7.00-17.00</godzinyPracy>
 			</pielegniarka>
-			<pielegniarka oddzial = 'Chirurgia'>
+			<pielegniarka oddzial = 'Chirurgia' nadgodziny='false'>
 				<imie>Agnieszka</imie>
 				<nazwisko>Niewiadoma</nazwisko>
-				<staz>10 lat</staz>
+				<staz>10</staz>
 				<godzinyPracy>17.00-7.00</godzinyPracy>
 			</pielegniarka>
-			<pielegniarka oddzial = 'Kardiologia'>
+			<pielegniarka oddzial = 'Kardiologia' nadgodziny='true'>
 				<imie>Janina</imie>
 				<nazwisko>Niecna</nazwisko>
-				<staz>12 lat</staz>
+				<staz>12</staz>
 				<godzinyPracy>17.00-7.00</godzinyPracy>
 			</pielegniarka>
 		</pielegniarki>

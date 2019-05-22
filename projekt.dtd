@@ -18,7 +18,7 @@
 <!ELEMENT pielegniarki (pielegniarka*)>
 <!ELEMENT pielegniarka (imie, nazwisko, staz, godzinyPracy)>
 <!ATTLIST pielegniarka oddzial %cd; %rq;>
-<!ELEMENT staz (%pcd;) >
+<!ELEMENT staz (%pcd;)>
 <!ELEMENT godzinyPracy (%pcd;)>
 
 <!ELEMENT pacjenci (pacjent*)>
