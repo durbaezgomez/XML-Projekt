@@ -98,11 +98,80 @@ nazwisko:hover, specjalizacja:hover{
     transition: all 0.5s ease;
 }
 ```
-## DTD WYMAGANIA
-
-
-## XSD WYMAGANIA
-
-## XSLT WYMAGANIA
-
-## DOM WYMAGANIA
+## DTD WYMAGANIA - WŁASNOŚCI ELEMENTÓW
+### 1.
+### 2.
+### 3.
+### 4.
+### 5.
+### 6.
+## DTD WYMAGANIA - WŁASNOŚCI ATRYBUTÓW
+### 1.
+### 2.
+### 3.
+### 4.
+### 5.
+### 6.
+## DTD WYMAGANIA - ENCJE PARAMETRYCZNE WEWNĘTRZNE I SEKCJA WARUNKOWA
+### 1.
+### 2.
+### 3.
+## XSD WYMAGANIA - WŁASNOŚCI TYPÓW
+### 1.
+### 2.
+### 3.
+### 4.
+### 5.
+### 6.
+### 7.
+### 8.
+### 9.
+### 10.
+### 11.
+### 12.
+### 13.
+### 14.
+### 15.
+### 16.
+### 17.
+### 18.
+## XSD WYMAGANIA - TYPY WBUDOWANE
+### 1.
+### 2.
+### 3.
+### 4.
+### 5.
+### 6.
+## XSLT WYMAGANIA - WYKORZYSTANIE RÓŻNORODNYCH ELEMENTÓW
+### 1.
+### 2.
+### 3.
+### 4.
+### 5.
+### 6.
+### 7.
+### 8.
+## XSLT WYMAGANIA - FUNKCJE I WYRAŻENIA xPATH
+### 1.
+### 2.
+### 3.
+### 4.
+### 5.
+### 6.
+## DOM WYMAGANIA - METODY WYKORZYSTUJĄCE DOM
+### 1.
+### 2.
+### 3.
+### 4.
+### 5.
+### 6.
+### 7.
+### 8.
+### 9.
+### 10.
+### 11.
+### 12.
+### 13.
+### 14.
+### 15.
+### 16.
