@@ -143,21 +143,146 @@ nazwisko:hover, specjalizacja:hover{
 ### 5.
 ### 6.
 ## XSLT WYMAGANIA - WYKORZYSTANIE RÓŻNORODNYCH ELEMENTÓW
-### 1.
-### 2.
-### 3.
-### 4.
-### 5.
-### 6.
-### 7.
-### 8.
+### 1. for-each, 2. select
+```html
+<td>
+	<b><xsl:text>Wynagrodzenia lekarzy: </xsl:text></b>
+</td>
+<td>
+	<xsl:for-each select="pracownicy/lekarze/lekarz">
+		<xsl:value-of select="substring(@placa,0,5)"/>
+		<xsl:text> PLN</xsl:text>
+		<br/>
+	</xsl:for-each>
+</td>
+```
+### 3. sort, 4. choose
+```html
+<td>
+	<xsl:for-each select="pracownicy/lekarze/lekarz">
+		<xsl:sort select="@placa" order="descending"/>
+			<xsl:choose>
+			  <xsl:when test="@plec='k'">
+			    <p class="women">
+			      <xsl:value-of select="imie "/>
+			      <xsl:text> </xsl:text>
+			      <xsl:value-of select="nazwisko"/>
+			    </p>
+			  </xsl:when>
+
+			  <xsl:otherwise>
+			    <p class="men">
+			      <xsl:value-of select="imie "/>
+			      <xsl:text> </xsl:text>
+			      <xsl:value-of select="nazwisko"/>
+			    </p>
+			  </xsl:otherwise>
+			</xsl:choose>
+	</xsl:for-each>
+</td>
+```
+### 5.if
+```html
+<td>
+	<xsl:for-each select="pracownicy/lekarze/lekarz">
+		<xsl:if test="substring(@placa,0,5) > 4000">
+		  <xsl:value-of select="@placa"/>
+		  <br/>
+		</xsl:if>
+	</xsl:for-each>
+</td>
+```
+### 6. comment
+```html
+<xsl:comment>
+	To jest opis danych dotyczących szpitala zawartych w pliku xml.
+</xsl:comment>
+```
+### 7. text
+```html
+<td>
+	<b><xsl:text>Ilość lekarzy</xsl:text></b> 
+</td>
+```
+### 8. call-template
+```html
+<td>
+	<xsl:call-template name="zarobki"/>
+</td>
+```
 ## XSLT WYMAGANIA - FUNKCJE I WYRAŻENIA xPATH
-### 1.
-### 2.
-### 3.
-### 4.
-### 5.
-### 6.
+### 1. count()
+```html
+<tr>
+	<td>
+		<b><xsl:text>Ilość lekarzy</xsl:text></b> 
+	</td>
+	<td>
+		<xsl:value-of select="count(pracownicy/lekarze/lekarz)"/>
+	</td>
+</tr>
+```
+### 2.sum()
+```html
+<td>
+	<b><xsl:text>Średnia wieku wszystkich pacjentów: </xsl:text></b>
+</td>
+<td>
+	<xsl:value-of select="sum(pacjenci/pacjent/wiek) div count(pacjenci/pacjent)"/>
+</td>
+```
+### 3. substring()
+```html
+<td>
+	<b><xsl:text>Wynagrodzenia lekarzy: </xsl:text></b>
+</td>
+<td>
+	<xsl:for-each select="pracownicy/lekarze/lekarz">
+		<xsl:value-of select="substring(@placa,0,5)"/>
+		<xsl:text> PLN</xsl:text>
+		<br/>
+	</xsl:for-each>
+</td>
+```
+### 4.concat()
+```html
+<td>
+	<b><xsl:text>Pielegniarki posiadające nadgodziny:</xsl:text></b>
+</td>
+<td>
+	<xsl:for-each select="pracownicy/pielegniarki/pielegniarka[@nadgodziny='true']">
+		<xsl:value-of select="concat('Imie: ', imie)"/>
+		<br/>
+		<xsl:value-of select="concat('Nazwisko: ', nazwisko)"/>
+		<br/>
+	</xsl:for-each>
+</td>
+```
+### 5.div()
+```html
+<td>
+	<b><xsl:text>Średnia wieku wszystkich pacjentów: </xsl:text></b>
+</td>
+<td>
+	<xsl:value-of select="sum(pacjenci/pacjent/wiek) div count(pacjenci/pacjent)"/>
+</td>
+```
+### 6. >
+```html
+<xsl:if test="substring(@placa,0,5) > 4000">
+                  <xsl:value-of select="@placa"/>
+                  <br/>
+                </xsl:if>
+```
+### 7. contains()
+```html
+<xsl:if test="contains(@stan,'dobry')">
+                  <xsl:value-of select="@producent"/>
+                  <xsl:text> </xsl:text>
+                  <xsl:value-of select="model"/>
+                  <br/>
+                </xsl:if>
+```
 ## DOM WYMAGANIA - METODY WYKORZYSTUJĄCE DOM
 ### 1.
 ### 2.
