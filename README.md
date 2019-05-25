@@ -270,18 +270,18 @@ nazwisko:hover, specjalizacja:hover{
 ### 6. >
 ```html
 <xsl:if test="substring(@placa,0,5) > 4000">
-                  <xsl:value-of select="@placa"/>
-                  <br/>
-                </xsl:if>
+	<xsl:value-of select="@placa"/>
+	<br/>
+</xsl:if>
 ```
 ### 7. contains()
 ```html
 <xsl:if test="contains(@stan,'dobry')">
-                  <xsl:value-of select="@producent"/>
-                  <xsl:text> </xsl:text>
-                  <xsl:value-of select="model"/>
-                  <br/>
-                </xsl:if>
+	<xsl:value-of select="@producent"/>
+	<xsl:text> </xsl:text>
+	<xsl:value-of select="model"/>
+	<br/>
+</xsl:if>
 ```
 ## DOM WYMAGANIA - METODY WYKORZYSTUJĄCE DOM
 ### 1.
