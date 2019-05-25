@@ -5,22 +5,22 @@
 <szpital>
 	<pracownicy>
 		<lekarze>
-			<lekarz plec = 'm' placa = '4000PLN' oddzial = 'Choroby Wewnetrzne'>
+			<lekarz plec='m' placa='4000PLN' oddzial='Choroby Wewnetrzne Kardiologia'>
 				<imie>Adam</imie>
 				<nazwisko>Adamski</nazwisko>
 				<specjalizacja>internista</specjalizacja>
 			</lekarz>
-			<lekarz plec = 'k' placa = '3500PLN' oddzial = 'Nefrologia'>
+			<lekarz plec='m' placa='3500PLN' oddzial='Nefrologia'>
 				<imie>Blazej</imie>
 				<nazwisko>Babacki</nazwisko>
 				<specjalizacja>hepatolog</specjalizacja>
 			</lekarz>
-			<lekarz plec = 'k' placa = '4200PLN' oddzial = 'Kardiologia'>
+			<lekarz plec='k' placa='4200PLN' oddzial='Kardiologia'>
 				<imie>Cecylia</imie>
 				<nazwisko>Czasowa</nazwisko>
 				<specjalizacja>kardiolog</specjalizacja>
 			</lekarz>
-			<lekarz plec = 'k' placa = '3600PLN' oddzial = 'Chirurgia'>
+			<lekarz plec='k' placa='4800PLN' oddzial='Chirurgia'>
 				<imie>Danuta</imie>
 				<nazwisko>Debska</nazwisko>
 				<specjalizacja>gastrolog</specjalizacja>
@@ -28,25 +28,25 @@
 		</lekarze>
 
 		<pielegniarki>
-			<pielegniarka oddzial = 'Choroby Wewnetrzne' nadgodziny='true'>
+			<pielegniarka oddzial='Choroby Wewnetrzne Kardiologia' nadgodziny='true'>
 				<imie>Karolina</imie>
 				<nazwisko>Smiala</nazwisko>
 				<staz>3</staz>
 				<godzinyPracy>7.00-17.00</godzinyPracy>
 			</pielegniarka>
-			<pielegniarka oddzial = 'Anestezjologia' nadgodziny='false'>
+			<pielegniarka oddzial='Anestezjologia' nadgodziny='false'>
 				<imie>Anna</imie>
 				<nazwisko>Testowa</nazwisko>
 				<staz>7</staz>
 				<godzinyPracy>7.00-17.00</godzinyPracy>
 			</pielegniarka>
-			<pielegniarka oddzial = 'Chirurgia' nadgodziny='false'>
+			<pielegniarka oddzial='Chirurgia' nadgodziny='false'>
 				<imie>Agnieszka</imie>
 				<nazwisko>Niewiadoma</nazwisko>
 				<staz>10</staz>
 				<godzinyPracy>17.00-7.00</godzinyPracy>
 			</pielegniarka>
-			<pielegniarka oddzial = 'Kardiologia' nadgodziny='true'>
+			<pielegniarka oddzial='Kardiologia' nadgodziny='true'>
 				<imie>Janina</imie>
 				<nazwisko>Niecna</nazwisko>
 				<staz>12</staz>
@@ -56,7 +56,7 @@
 	</pracownicy>
 
 	<pacjenci>
-		<pacjent plec = 'm' oddzial = 'Choroby Wewnetrzne'>
+		<pacjent plec='m' oddzial='Choroby Wewnetrzne'>
 			<imie>Jerzy</imie>
 			<nazwisko>Nowak</nazwisko>
 			<wiek>67</wiek>
@@ -71,7 +71,7 @@
 				</lek>
 			</leki>
 		</pacjent>
-		<pacjent plec = 'k' oddzial = 'Kardiologia'>
+		<pacjent plec='k' oddzial='Kardiologia'>
 			<imie>Zofia</imie>
 			<nazwisko>Papacka</nazwisko>
 			<wiek>60</wiek>
@@ -86,7 +86,7 @@
 				</lek>
 			</leki>
 		</pacjent>
-		<pacjent plec = 'm' oddzial = 'Chirurgia'>
+		<pacjent plec='m' oddzial='Chirurgia'>
 			<imie>Andrzej</imie>
 			<nazwisko>Kozak</nazwisko>
 			<wiek>53</wiek>
@@ -140,7 +140,7 @@
 						<model>Imagine</model>
 						<rocznik>2012</rocznik>
 					</produkt>
-					<produkt stan='dobry' producent='Acer'>
+					<produkt stan='doWymiany' producent='Acer'>
 						<model>Vostro</model>
 						<rocznik>2013</rocznik>
 					</produkt>
@@ -150,7 +150,7 @@
 						<model>Matebook</model>
 						<rocznik>2008</rocznik>
 					</produkt>
-					<produkt stan='doWymiany' producent='Acer'>
+					<produkt stan='dobry' producent='Acer'>
 						<model>Matebook</model>
 						<rocznik>2005</rocznik>
 					</produkt>

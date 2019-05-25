@@ -1,5 +1,6 @@
 szpital{
-	font-family: "Comic Sans MS";
+	/*font-family: "Comic Sans MS";*/
+	font-family: "Helvetica";
 	background-color: #dedede;
 }
 
@@ -99,17 +100,17 @@ lekarze, pielegniarki, pacjenci, diagnostyka, chirurgia, komputery{
  	-moz-transition: background-color 2s ease-out;
 	-o-transition: background-color 2s ease-out;
   	transition: all 2s ease-out;
-	background-image: linear-gradient(72deg,#ffa952, #feffdf);
+	background-image: linear-gradient(72deg,#89B5E8, #feffdf);
 }
 lekarze:hover, pielegniarki:hover, pacjenci:hover, diagnostyka:hover, chirurgia:hover, komputery:hover{
-	background: red;
+	background: #7E65FF;
 }
 lekarz, pielegniarka, pacjent,produkt{
 	display: block;
 	padding: 3px;
 	border: solid #a2a8d3;
 	margin: 4px;
-	background-color: #FDCEA2
+	background-color: white;
 }
 leki, lek, sprzet{
 	display: block;
@@ -118,7 +119,7 @@ nazwisko, nazwa, model, specjalizacja{
 	font-size: 15px;
 	font-weight: bold; 
 }
-imie, nazwisko, model{
+nazwisko, model{
 	text-decoration: underline;
 }
 imie, staz, godzinyPracy, wiek, rocznik{
@@ -133,6 +134,6 @@ lekarz[oddzial='Choroby Wewnetrzne']{
 	border: solid #C5FDC9;
 }
 nazwisko:hover, specjalizacja:hover{
-    color:#f00;
+    color:#7E65FF;
     transition: all 0.5s ease;
 }

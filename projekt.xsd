@@ -6,32 +6,34 @@
 
 	<xsd:complexType name="typ_szpital">
 		<xsd:sequence>
-			<xsd:element name="pracownicy" type='typ_pracownicy'/>
+			<xsd:element name="pracownicy" type="typ_pracownicy"/>
 			<xsd:element name="sprzet" type="type_sprzet"/>
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:complexType name='typ_pracownicy'>
+	<xsd:complexType name="typ_pracownicy">
 		<xsd:sequence>
-			<xsd:element name="lekarze" type='typ_lekarze'/>
+			<xsd:element name="lekarze" type="typ_lekarze"/>
 			<xsd:element name="pielegniarki" type="typ_pielegniarki"/>
 			<xsd:element name="pacjenci" type="typ_pacjenci"/>
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:complexType name='typ_lekarze'>
+	<xsd:complexType name="typ_lekarze">
 		<xsd:sequence>
 			<xsd:element name="lekarz" type="typ_lekarz" minOccurs="1"/>
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:complexType name='typ_lekarz'>
+	<xsd:complexType name="typ_lekarz">
 		<xsd:sequence>
 			<xsd:element name="imie" type="xsd:string"/>
 			<xsd:element name="nazwisko" type="xsd:string"/>
 			<xsd:element name="specjalizacja" type="xsd:string"/>
 		</xsd:sequence>
 		<xsd:attribute name="plec" type="typ_plec" use="required"/>
+		<xsd:attribute name="placa" type="typ_placa" use="required"/>
+		<xsd:attribute name="oddzial" type="typ_oddzialy" use="required"/>
 	</xsd:complexType>
 
 	<xsd:complexType name="typ_pielegniarki">
@@ -47,11 +49,13 @@
 			<xsd:element name="staz" type="xsd:integer"/>
 			<xsd:element name="godzinyPracy" type="xsd:string"/>
 		</xsd:sequence>
+		<xsd:attribute name="oddzial" type="typ_oddzialy" use="required"/>
+		<xsd:attribute name="nadgodziny" type="xsd:boolean" use="required"/>
 	</xsd:complexType>
 
-	<xsd:complexType name='typ_pacjenci'>
+	<xsd:complexType name="typ_pacjenci">
 		<xsd:sequence>
-			<xsd:element name="pacjent" type="typ_pacjent"/>
+			<xsd:element name="pacjent" type="typ_pacjent" maxOccurs="200"/>
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -59,12 +63,20 @@
 		<xsd:sequence>
 			<xsd:element name="imie" type="xsd:string"/>
 			<xsd:element name="nazwisko" type="xsd:string"/>
-			<xsd:element name="wiek" type="xsd:integer"/>
+			<xsd:element name="wiek" type="typ_wiek"/>
 			<xsd:element name="leki" type="typ_leki"/>
 		</xsd:sequence>
+		<xsd:attribute name="plec" type="typ_plec" use="required"/>
+		<xsd:attribute name="oddzial" type="typ_oddzial" use="required"/>
 	</xsd:complexType>
 
 	<xsd:complexType name="typ_leki">
+		<xsd:sequence>
+			<xsd:element name="lek" type="typ_lek"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="typ_lek">
 		<xsd:sequence>
 			<xsd:element name="nazwa" type="xsd:string"/>
 			<xsd:element name="dawka" type="xsd:string"/>
@@ -97,11 +109,21 @@
 			<xsd:element name="model" type="xsd:string"/>
 			<xsd:element name="rocznik" type="xsd:positiveInteger"/> 
 		</xsd:sequence>
+		<xsd:attribute name="stan" type="typ_stan" use="required"/>
+		<xsd:attribute name="producent" type="xsd:string" use="required"/>
 	</xsd:complexType>
 
 	<xsd:simpleType name="typ_plec">
 		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="k{1}|m{1}"/>
+			<xsd:enumeration value="k"/>
+ 			<xsd:enumeration value="m"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="typ_wiek">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="120"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 
@@ -110,5 +132,26 @@
 			<xsd:pattern value="[1-9]+[0-9]*PLN"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+
+	<xsd:simpleType name="typ_oddzial">
+		<xsd:restriction base="typ">
+			<xsd:minLength value="5"/>
+ 			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="typ_stan">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="dobry"/>
+ 			<xsd:enumeration value="sredni"/>
+ 			<xsd:enumeration value="doWymiany"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="typ_oddzialy">
+		<xsd:list itemType="typ_oddzial"/>
+	</xsd:simpleType>
+
+	
 
 </xsd:schema>

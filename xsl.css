@@ -1,0 +1,38 @@
+body{
+	background-color: #dedede;
+	display: inline;
+	font-family: "Helvetica";
+}
+
+h1{
+	width: 60%;
+  	margin: auto;
+  	padding: 10px;
+  	text-align: center;
+  	font-size: 35px;
+}
+
+table {
+  width: 60%;
+  margin: auto;
+  border: 1px solid #000;
+}
+
+th, td {
+  width: 25%;
+  text-align: left;
+  vertical-align: top;
+  background-image: linear-gradient(72deg,#89B5E8, #feffdf);
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 0.3em;
+}
+
+.men{
+	color: blue;
+}
+
+.women{
+	color: red;
+}
+
