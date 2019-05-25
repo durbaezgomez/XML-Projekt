@@ -22,7 +22,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           <tr>
             <td>
               <b>
-              <xsl:text>Ilosc  pielęgniarek: </xsl:text>
+              <xsl:text>Ilość  pielęgniarek: </xsl:text>
               </b> 
             </td>
             <td>
@@ -32,7 +32,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           <tr>
             <td>
               <b>
-              <xsl:text>Ilosc pacjentow: </xsl:text>
+              <xsl:text>Ilość pacjentów: </xsl:text>
               </b>
             </td>
             <td>
@@ -118,8 +118,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
               </xsl:for-each>
             </td>
           </tr>
-
-
         </table>
       </body>
     </html>

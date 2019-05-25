@@ -1,7 +1,10 @@
 body{
-	background-color: #dedede;
+	background-image: linear-gradient(130deg,#A967EB, #1A67EB);
 	display: inline;
 	font-family: "Helvetica";
+	color: white;
+	transition: background 0.5s ease-out;
+  	transition: all 2s ease-out;
 }
 
 h1{
@@ -16,16 +19,23 @@ table {
   width: 60%;
   margin: auto;
   border: 1px solid #000;
+  background-image: linear-gradient(130deg,#1A67EB, #A967EB);
+  transition: background 0.5s ease-out;
+  transition: all 2s ease-out;
 }
 
 th, td {
   width: 25%;
   text-align: left;
   vertical-align: top;
-  background-image: linear-gradient(72deg,#89B5E8, #feffdf);
+  background-color: transparent;
   border: 1px solid #000;
-  border-collapse: collapse;
+  border-collapse: all;
   padding: 0.3em;
+}
+
+td:hover{
+	background-color: rgba(0, 0, 0, .3);
 }
 
 .men{
