@@ -3,22 +3,22 @@
 <szpital>
 	<pracownicy>
 		<lekarze>
-			<lekarz plec='m' placa='4000PLN' oddzial='Choroby Wewnetrzne Kardiologia'>
+			<lekarz plec='m' placa='4000' oddzial='Choroby Wewnetrzne Kardiologia'>
 				<imie>Adam</imie>
 				<nazwisko>Adamski</nazwisko>
 				<specjalizacja>internista</specjalizacja>
 			</lekarz>
-			<lekarz plec='m' placa='3500PLN' oddzial='Nefrologia'>
+			<lekarz plec='m' placa='3500' oddzial='Nefrologia'>
 				<imie>Blazej</imie>
 				<nazwisko>Babacki</nazwisko>
 				<specjalizacja>hepatolog</specjalizacja>
 			</lekarz>
-			<lekarz plec='k' placa='4200PLN' oddzial='Kardiologia'>
+			<lekarz plec='k' placa='4200' oddzial='Kardiologia'>
 				<imie>Cecylia</imie>
 				<nazwisko>Czasowa</nazwisko>
 				<specjalizacja>kardiolog</specjalizacja>
 			</lekarz>
-			<lekarz plec='k' placa='4800PLN' oddzial='Chirurgia'>
+			<lekarz plec='k' placa='4800' oddzial='Chirurgia'>
 				<imie>Danuta</imie>
 				<nazwisko>Debska</nazwisko>
 				<specjalizacja>gastrolog</specjalizacja>
@@ -30,25 +30,25 @@
 				<imie>Karolina</imie>
 				<nazwisko>Smiala</nazwisko>
 				<staz>3</staz>
-				<godzinyPracy>7.00-17.00</godzinyPracy>
+				<godzinyPracy>07.00-17.00</godzinyPracy>
 			</pielegniarka>
 			<pielegniarka oddzial='Anestezjologia' nadgodziny='false'>
 				<imie>Anna</imie>
 				<nazwisko>Testowa</nazwisko>
 				<staz>7</staz>
-				<godzinyPracy>7.00-17.00</godzinyPracy>
+				<godzinyPracy>07.00-17.00</godzinyPracy>
 			</pielegniarka>
 			<pielegniarka oddzial='Chirurgia' nadgodziny='false'>
 				<imie>Agnieszka</imie>
 				<nazwisko>Niewiadoma</nazwisko>
 				<staz>10</staz>
-				<godzinyPracy>17.00-7.00</godzinyPracy>
+				<godzinyPracy>17.00-07.00</godzinyPracy>
 			</pielegniarka>
 			<pielegniarka oddzial='Kardiologia' nadgodziny='true'>
 				<imie>Janina</imie>
 				<nazwisko>Niecna</nazwisko>
 				<staz>12</staz>
-				<godzinyPracy>17.00-7.00</godzinyPracy>
+				<godzinyPracy>17.00-07.00</godzinyPracy>
 			</pielegniarka>
 		</pielegniarki>
 	</pracownicy>

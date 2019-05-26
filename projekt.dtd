@@ -3,11 +3,11 @@
 <!ENTITY % rq "#REQUIRED">
 <!ENTITY % imp "#IMPLIED">
 
-
-
 <!ELEMENT szpital (pracownicy, pacjenci, sprzet)*>
 
-<!ELEMENT pracownicy (lekarze, pielegniarki)*>
+
+<![INCLUDE[ <!ELEMENT pracownicy (lekarze, pielegniarki)*> ]]>
+<![IGNORE[  <!ELEMENT pracownicy ((lekarze, pielegniarki) | (inni))*> ]]>
 
 <!ELEMENT lekarze (lekarz)*>
 <!ELEMENT lekarz (imie, nazwisko, specjalizacja)*>
