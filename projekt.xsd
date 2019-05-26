@@ -120,7 +120,6 @@
     		<xs:element type="pracownicyType" name="pracownicy"/>
     	</xs:sequence>
   	</xs:choice>
-    
   </xs:complexType>
 
   <xs:complexType name="lekType">
