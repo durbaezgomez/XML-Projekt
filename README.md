@@ -284,19 +284,64 @@ nazwisko:hover, specjalizacja:hover{
 </xsl:if>
 ```
 ## DOM WYMAGANIA - METODY WYKORZYSTUJĄCE DOM
-### 1.
-### 2.
-### 3.
-### 4.
-### 5.
-### 6.
-### 7.
-### 8.
-### 9.
-### 10.
-### 11.
-### 12.
-### 13.
-### 14.
-### 15.
-### 16.
+### 1. getElementsByTagName, 2. firstChild
+```python
+def getValFromElemByTag(element, tag):
+    return str(element.getElementsByTagName(tag)[0].firstChild.data)
+```
+### 3. getAttribute
+```python
+def getValFromAttrByTag(element, tag):
+    return str(element.getAttribute(tag))
+```
+### 4.  removeAttribute
+```python
+def poprawnoscPolityczna():
+    try:
+        for l in lekarze:
+            l.removeAttribute("plec")
+    except NotFoundErr:
+        print("No such attribute in this element!")
+```
+### 5. hasAttribute, 6. setAttribute
+```python
+        for s in stacjo:
+            if s.hasAttribute("stan"):
+                s.setAttribute("stan", "dobry")
+```
+### 7. cloneNode
+```python
+nowy = pacjenci.getElementsByTagName("pacjent")[0].cloneNode(deep=True)
+```
+### 8. createElement
+```python
+choroba = doc.createElement("choroba")
+```
+### 9. createTextNode
+```python
+chorobaText = doc.createTextNode(_choroba)
+```
+### 10. appendChild
+```python
+choroba.appendChild(chorobaText)
+```
+### 11. nodeValue
+```python
+nowy.getElementsByTagName("imie")[0].firstChild.nodeValue = _imie
+```
+### 12. removeChild
+```python
+    for p in pacjenci:
+        if p.getElementsByTagName("nazwisko")[0].firstChild.data == _nazwisko:
+            szpital.getElementsByTagName("pacjenci")[0].removeChild(p)
+```
+### 13. node.length, 14. hasChildNodes
+```python
+def ilePacjentow():
+    if pacjenci.hasChildNodes():
+        return pacjenci.length
+```
+### 15.createComment 16. insertBefore
+```python
+nowy.insertBefore(doc.createComment("NOWY PACJENT"),nowy.getElementsByTagName("imie")[0])
+```
