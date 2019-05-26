@@ -327,7 +327,7 @@ nazwisko:hover, specjalizacja:hover{
 <xs:element name="dawka" type="xs:float"/>
 ```
 ### 6.unsigned Int
-```
+```xml
 <xs:simpleType name="wiekType">
     <xs:restriction base="xs:unsignedInt">
       <xs:minExclusive value="0"/>
