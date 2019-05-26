@@ -1,7 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE szpital SYSTEM "projekt.dtd">
-<?xml-stylesheet type="text/css" href="projekt.css" ?>
-
 <szpital>
 	<pracownicy>
 		<lekarze>
@@ -63,11 +61,11 @@
 			<leki>
 				<lek>
 					<nazwa>Buderin</nazwa>
-					<dawka>3 x 1 tabletka</dawka>
+					<dawka>3.15</dawka>
 				</lek>
 				<lek>
 					<nazwa>Filytol</nazwa>
-					<dawka>1 x 1 tabletka</dawka>
+					<dawka>0.01</dawka>
 				</lek>
 			</leki>
 		</pacjent>
@@ -78,11 +76,11 @@
 			<leki>
 				<lek>
 					<nazwa>Meriozyna</nazwa>
-					<dawka>2 x 1 tabletka</dawka>
+					<dawka>0.21</dawka>
 				</lek>
 				<lek>
 					<nazwa>Buderin</nazwa>
-					<dawka>2 x 1 tabletka</dawka>
+					<dawka>0.45</dawka>
 				</lek>
 			</leki>
 		</pacjent>
@@ -93,11 +91,11 @@
 			<leki>
 				<lek>
 					<nazwa>Gatoryna</nazwa>
-					<dawka>2 x 1 tabletka</dawka>
+					<dawka>0.21</dawka>
 				</lek>
 				<lek>
 					<nazwa>Sentum</nazwa>
-					<dawka>1 x 1 tabletka</dawka>
+					<dawka>1.15</dawka>
 				</lek>
 			</leki>
 		</pacjent>
@@ -106,7 +104,7 @@
 	<sprzet>
 		<rodzaje>
 			<diagnostyka>
-				<produkt producent='GC MEDIS'>
+				<produkt producent='GCMEDIS'>
 					<model>CERA-CHECK</model>
 					<rocznik>2014</rocznik>
 				</produkt>
@@ -115,7 +113,7 @@
 					<rocznik>2012</rocznik>
 
 				</produkt>
-				<produkt producent='CU MEDICS'>
+				<produkt producent='CUMEDICS'>
 					<model>iPAD SP1</model>
 					<rocznik>2017</rocznik>
 				</produkt>
@@ -140,13 +138,13 @@
 						<model>Imagine</model>
 						<rocznik>2012</rocznik>
 					</produkt>
-					<produkt stan='doWymiany' producent='Acer'>
+					<produkt stan='dobry' producent='Acer'>
 						<model>Vostro</model>
 						<rocznik>2013</rocznik>
 					</produkt>
 				</stacjonarne>
 				<laptopy>
-					<produkt stan='sredni' producent='Dell'>
+					<produkt stan='dobry' producent='Dell'>
 						<model>Matebook</model>
 						<rocznik>2008</rocznik>
 					</produkt>
