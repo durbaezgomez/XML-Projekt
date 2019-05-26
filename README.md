@@ -115,8 +115,14 @@ nazwisko:hover, specjalizacja:hover{
 ```
 <!ELEMENT lek (nazwa, dawka?)>
 ```
-### 5. 
-### 6.
+### 5. wartość typu #PCDATA
+```
+<!ELEMENT imie (%pcd;)>
+```
+### 6. wartość spośród dwóch opcji
+```
+<![IGNORE[  <!ELEMENT pracownicy ((lekarze, pielegniarki) | (inni))*> ]]>
+```
 ## DTD WYMAGANIA - WŁASNOŚCI ATRYBUTÓW
 ### 1. atrybut opcjonalny
 ```
@@ -152,15 +158,17 @@ nazwisko:hover, specjalizacja:hover{
 <!ENTITY % rq "#REQUIRED">
 ```
 ### 3. sekcja warunkowa
-
-
+```
+<![INCLUDE[ <!ELEMENT pracownicy (lekarze, pielegniarki)*> ]]>
+<![IGNORE[  <!ELEMENT pracownicy ((lekarze, pielegniarki) | (inni))*> ]]>
+```
 ## XSD WYMAGANIA - WŁASNOŚCI TYPÓW
 ### 1. pattern
 ```xml
-<xs:simpleType name="placaType">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="[1-9]+[0-9]*PLN"/>
-    </xs:restriction>
+<xs:simpleType name="oddzialType2">
+  	<xs:restriction base="xs:string">
+    	<xs:pattern value="ODZ[0-9]{3}"/>
+	</xs:restriction>   
 </xs:simpleType>
 ```
 ### 2. min/max Length
@@ -246,11 +254,52 @@ nazwisko:hover, specjalizacja:hover{
     </xs:sequence>
   </xs:group>
 ```
-### 14. 
-### 15.
-### 16.
-### 17.
-### 18.
+### 14. union memberTypes
+```xml
+<xs:simpleType name="oddzialType">
+  	<xs:union memberTypes="oddzialType1 oddzialType2"/>
+</xs:simpleType>
+```
+### 15.  totalDigits
+```xml
+<xs:simpleType name="placaType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+```
+### 16. restriction length
+```xml
+<xs:simpleType name="godzinyPracyType">
+    <xs:restriction base="xs:string">
+      <xs:length value="11"/>
+    </xs:restriction>
+  </xs:simpleType>
+```
+### 17. all
+```xml
+<xs:complexType name="rodzajeType">
+    <xs:all>
+      <xs:element type="diagnostykaType" name="diagnostyka"/>
+      <xs:element type="chirurgiaType" name="chirurgia"/>
+      <xs:element type="komputeryType" name="komputery"/>
+    </xs:all>
+  </xs:complexType>
+```
+### 18.  choice
+```xml
+<xs:complexType name="pracownicyType">
+  	<xs:choice>
+  		<xs:sequence>
+	      <xs:element type="lekarzeType" name="lekarze"/>
+	      <xs:element type="pielegniarkiType" name="pielegniarki"/>
+    	</xs:sequence>
+    	<xs:sequence>
+    		<xs:element type="pracownicyType" name="pracownicy"/>
+    	</xs:sequence>
+  	</xs:choice>
+  </xs:complexType>
+```
 ## XSD WYMAGANIA - TYPY WBUDOWANE
 ### 1. string
 ```xml
