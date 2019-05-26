@@ -99,92 +99,154 @@ nazwisko:hover, specjalizacja:hover{
 }
 ```
 ## DTD WYMAGANIA - WŁASNOŚCI ELEMENTÓW
-### 1.
-### 2.
-### 3.
-### 4.
-### 5.
+### 1. jeden element
+```
+<!ELEMENT sprzet (rodzaje)>
+```
+### 2. jeden lub wiecej elementow
+```
+<!ELEMENT leki (lek+)>
+```
+### 3. zero lub wiecej elementow
+```
+<!ELEMENT lekarze (lekarz)*>
+```
+### 4. jeden lub zero elementow
+```
+<!ELEMENT lek (nazwa, dawka?)>
+```
+### 5. 
 ### 6.
 ## DTD WYMAGANIA - WŁASNOŚCI ATRYBUTÓW
-### 1.
-### 2.
-### 3.
-### 4.
-### 5.
-### 6.
+### 1. atrybut opcjonalny
+```
+<!ATTLIST produkt stan %cd; %imp;>
+```
+### 2. atrybut wymagany
+```
+<!ATTLIST lekarz oddzial %cd; %rq;>
+```
+### 3. atrybut z domyślną wartością
+```
+<!ATTLIST produkt stan %cd; #FIXED 'dobry'>
+```
+### 4. atrybut z wartością dowolną z podanych
+```
+<!ATTLIST lekarz plec (m|k) %rq;>
+```
+### 5. atrybut, gdzie wartosc to jedno slowo
+```
+<!ATTLIST produkt producent NMTOKEN %rq;>
+```
+### 6. atrybut, gdzie wartość może składać się z wielu słów
+```
+<!ATTLIST pielegniarka oddzial NMTOKENS %rq;>
+```
 ## DTD WYMAGANIA - ENCJE PARAMETRYCZNE WEWNĘTRZNE I SEKCJA WARUNKOWA
-### 1.
-### 2.
-### 3.
+### 1. CDATA
+```
+<!ENTITY % cd "CDATA">
+```
+### 2. #REQUIRED
+```
+<!ENTITY % rq "#REQUIRED">
+```
+### 3. sekcja warunkowa
+
+
 ## XSD WYMAGANIA - WŁASNOŚCI TYPÓW
 ### 1. pattern
 ```xml
-<xsd:simpleType name="typ_placa">
-	<xsd:restriction base="xsd:string">
-		<xsd:pattern value="[1-9]+[0-9]*PLN"/>
-	</xsd:restriction>
-</xsd:simpleType>
+<xs:simpleType name="placaType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[1-9]+[0-9]*PLN"/>
+    </xs:restriction>
+</xs:simpleType>
 ```
 ### 2. min/max Length
 ```xml
-<xsd:simpleType name="typ_oddzial">
-	<xsd:restriction base="typ">
-		<xsd:minLength value="5"/>
-		<xsd:maxLength value="50"/>
-	</xsd:restriction>
-</xsd:simpleType>
+<xs:simpleType name="oddzialType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="5"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
 ```
 ### 3. enumeration
 ```xml
-<xsd:simpleType name="typ_stan">
-	<xsd:restriction base="xsd:string">
-		<xsd:enumeration value="dobry"/>
-		<xsd:enumeration value="sredni"/>
-		<xsd:enumeration value="doWymiany"/>
-	</xsd:restriction>
-</xsd:simpleType>
+<xs:simpleType name="plecType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="k"/>
+      <xs:enumeration value="m"/>
+    </xs:restriction>
+  </xs:simpleType>
 ```
 ### 4. list
 ```xml
-<xsd:simpleType name="typ_oddzialy">
-	<xsd:list itemType="typ_oddzial"/>
-</xsd:simpleType>
+<xs:simpleType name="oddzialyType">
+    <xs:list itemType="oddzialType"/>
+ </xs:simpleType>
 ```
 ### 5. maxOccurs
 ```xml
-<xsd:complexType name="typ_produkty">
-	<xsd:sequence>
-		<xsd:element name="produkt" type="typ_produkt" maxOccurs="unbounded" />
-	</xsd:sequence>
-</xsd:complexType>
+<xs:complexType name="lekarzeType">
+    <xs:sequence>
+      <xs:element type="lekarzType" name="lekarz" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+</xs:complexType>
 ```
 ### 6. use required
 ```xml
-<xsd:attribute name="nadgodziny" type="xsd:boolean" use="required"/>
+<xs:attribute type="plecType" name="placa" use="required"/>
 ```
-### 7.  min/max Inclusive
+### 7. min/max Inclusive
 ```xml
-<xsd:simpleType name="typ_wiek">
-	<xsd:restriction base="xsd:integer">
-		<xsd:minInclusive value="0"/>
-		<xsd:maxInclusive value="120"/>
-	</xsd:restriction>
-</xsd:simpleType>
+<xs:simpleType name="stazType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="50"/>
+    </xs:restriction>
+</xs:simpleType>
 ```
-### 8. minOccurs
+### 8. mix/max Exclusive
 ```xml
-<xsd:complexType name="typ_lekarze">
-	<xsd:sequence>
-		<xsd:element name="lekarz" type="typ_lekarz" minOccurs="1"/>
-	</xsd:sequence>
-</xsd:complexType>
+<xs:simpleType name="wiekType">
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minExclusive value="0"/>
+      <xs:maxExclusive value="120"/>
+    </xs:restriction>
+  </xs:simpleType>
 ```
-### 9.
-### 10.
-### 11.
-### 12.
-### 13.
-### 14.
+### 9. minOccurs
+```xml
+<xs:complexType name="lekarzeType">
+    <xs:sequence>
+      <xs:element type="lekarzType" name="lekarz" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+</xs:complexType>
+```
+### 10. default attribute value
+```xml
+<xs:attribute type="oddzialyType" name="oddzial" default="Ogolny"/>
+```
+### 11. fixed attribute value
+```xml
+<xs:attribute type="xs:string" name="stan" fixed="dobry"/>
+```
+### 12. optional attribute use
+```xml
+<xs:attribute type="plecType" name="plec" use="optional"/>
+```
+### 13. group elements
+```xml
+<xs:group name="imieNazw">
+    <xs:sequence>
+      <xs:element name="imie" type="xs:string"/>
+      <xs:element name="nazwisko" type="xs:string"/>
+    </xs:sequence>
+  </xs:group>
+```
+### 14. 
 ### 15.
 ### 16.
 ### 17.
@@ -192,22 +254,38 @@ nazwisko:hover, specjalizacja:hover{
 ## XSD WYMAGANIA - TYPY WBUDOWANE
 ### 1. string
 ```xml
-<xsd:element name="imie" type="xsd:string"/>
+<xs:element name="imie" type="xs:string"/>
 ```
 ### 2. integer
 ```xml
-<xsd:element name="staz" type="xsd:integer"/>
+<xs:simpleType name="stazType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="50"/>
+    </xs:restriction>
+</xs:simpleType>
 ```
 ### 3. boolean
 ```xml
-<xsd:attribute name="nadgodziny" type="xsd:boolean" use="required"/>
+<xs:attribute type="xs:boolean" name="nadgodziny" use="required"/>
 ```
 ### 4. positiveInteger
 ```xml
-<xsd:element name="rocznik" type="xsd:positiveInteger"/> 
+<xs:element name="rocznik" type="xs:positiveInteger"/> 
 ```
-### 5.
-### 6.
+### 5. float
+```xml
+<xs:element name="dawka" type="xs:float"/>
+```
+### 6.unsigned Int
+```
+<xs:simpleType name="wiekType">
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minExclusive value="0"/>
+      <xs:maxExclusive value="120"/>
+    </xs:restriction>
+  </xs:simpleType>
+```
 ## XSLT WYMAGANIA - WYKORZYSTANIE RÓŻNORODNYCH ELEMENTÓW
 ### 1. for-each, 2. select
 ```html
