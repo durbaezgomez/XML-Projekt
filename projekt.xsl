@@ -1,9 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
 <xsl:stylesheet version="1.0"
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:output indent="yes" method="html" encoding="UTF-8"/>
   <xsl:template match="/szpital">
-    <link rel="stylesheet" type="text/css" href="xsl.css"/>
-    <html>
+    <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
+    <html lang="pl">
+      
+      <head>
+        <title>Szpital</title>
+        <link rel="stylesheet" type="text/css" href="xsl.css"/>
+      </head>
+      
       <body>
         <h1>Szpital</h1>
         <xsl:comment>

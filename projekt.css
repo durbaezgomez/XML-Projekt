@@ -132,7 +132,7 @@ specjalizacja{
 }
 
 /*SEPARATE RULES*/
-lekarz[oddzial='Choroby Wewnetrzne']{
+lekarz[oddzial='Choroby Wewnetrzne Kardiologia']{
 	border: solid #C5FDC9;
 }
 nazwisko:hover, specjalizacja:hover{
