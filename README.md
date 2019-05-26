@@ -117,14 +117,68 @@ nazwisko:hover, specjalizacja:hover{
 ### 2.
 ### 3.
 ## XSD WYMAGANIA - WŁASNOŚCI TYPÓW
-### 1.
-### 2.
-### 3.
-### 4.
-### 5.
-### 6.
-### 7.
-### 8.
+### 1. pattern
+```xml
+<xsd:simpleType name="typ_placa">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="[1-9]+[0-9]*PLN"/>
+	</xsd:restriction>
+</xsd:simpleType>
+```
+### 2. min/max Length
+```xml
+<xsd:simpleType name="typ_oddzial">
+	<xsd:restriction base="typ">
+		<xsd:minLength value="5"/>
+		<xsd:maxLength value="50"/>
+	</xsd:restriction>
+</xsd:simpleType>
+```
+### 3. enumeration
+```xml
+<xsd:simpleType name="typ_stan">
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="dobry"/>
+		<xsd:enumeration value="sredni"/>
+		<xsd:enumeration value="doWymiany"/>
+	</xsd:restriction>
+</xsd:simpleType>
+```
+### 4. list
+```xml
+<xsd:simpleType name="typ_oddzialy">
+	<xsd:list itemType="typ_oddzial"/>
+</xsd:simpleType>
+```
+### 5. maxOccurs
+```xml
+<xsd:complexType name="typ_produkty">
+	<xsd:sequence>
+		<xsd:element name="produkt" type="typ_produkt" maxOccurs="unbounded" />
+	</xsd:sequence>
+</xsd:complexType>
+```
+### 6. use required
+```xml
+<xsd:attribute name="nadgodziny" type="xsd:boolean" use="required"/>
+```
+### 7.  min/max Inclusive
+```xml
+<xsd:simpleType name="typ_wiek">
+	<xsd:restriction base="xsd:integer">
+		<xsd:minInclusive value="0"/>
+		<xsd:maxInclusive value="120"/>
+	</xsd:restriction>
+</xsd:simpleType>
+```
+### 8. minOccurs
+```xml
+<xsd:complexType name="typ_lekarze">
+	<xsd:sequence>
+		<xsd:element name="lekarz" type="typ_lekarz" minOccurs="1"/>
+	</xsd:sequence>
+</xsd:complexType>
+```
 ### 9.
 ### 10.
 ### 11.
@@ -136,10 +190,22 @@ nazwisko:hover, specjalizacja:hover{
 ### 17.
 ### 18.
 ## XSD WYMAGANIA - TYPY WBUDOWANE
-### 1.
-### 2.
-### 3.
-### 4.
+### 1. string
+```xml
+<xsd:element name="imie" type="xsd:string"/>
+```
+### 2. integer
+```xml
+<xsd:element name="staz" type="xsd:integer"/>
+```
+### 3. boolean
+```xml
+<xsd:attribute name="nadgodziny" type="xsd:boolean" use="required"/>
+```
+### 4. positiveInteger
+```xml
+<xsd:element name="rocznik" type="xsd:positiveInteger"/> 
+```
 ### 5.
 ### 6.
 ## XSLT WYMAGANIA - WYKORZYSTANIE RÓŻNORODNYCH ELEMENTÓW
