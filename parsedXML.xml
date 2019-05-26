@@ -1,0 +1,157 @@
+<?xml version="1.0" ?><!DOCTYPE szpital  SYSTEM 'projekt.dtd'><?xml-stylesheet type="text/css" href="projekt.css" ?><szpital>
+	<pracownicy>
+		<lekarze>
+			<lekarz oddzial="Choroby Wewnetrzne Kardiologia" placa="4000PLN">
+				<imie>Adam</imie>
+				<nazwisko>Adamski</nazwisko>
+				<specjalizacja>internista</specjalizacja>
+			</lekarz>
+			<lekarz oddzial="Nefrologia" placa="3500PLN">
+				<imie>Blazej</imie>
+				<nazwisko>Babacki</nazwisko>
+				<specjalizacja>hepatolog</specjalizacja>
+			</lekarz>
+			<lekarz oddzial="Kardiologia" placa="4200PLN">
+				<imie>Cecylia</imie>
+				<nazwisko>Czasowa</nazwisko>
+				<specjalizacja>kardiolog</specjalizacja>
+			</lekarz>
+			<lekarz oddzial="Chirurgia" placa="4800PLN">
+				<imie>Danuta</imie>
+				<nazwisko>Debska</nazwisko>
+				<specjalizacja>gastrolog</specjalizacja>
+			</lekarz>
+		</lekarze>
+
+		<pielegniarki>
+			<pielegniarka nadgodziny="true" oddzial="Choroby Wewnetrzne Kardiologia">
+				<imie>Karolina</imie>
+				<nazwisko>Smiala</nazwisko>
+				<staz>3</staz>
+				<godzinyPracy>7.00-17.00</godzinyPracy>
+			</pielegniarka>
+			<pielegniarka nadgodziny="false" oddzial="Anestezjologia">
+				<imie>Anna</imie>
+				<nazwisko>Testowa</nazwisko>
+				<staz>7</staz>
+				<godzinyPracy>7.00-17.00</godzinyPracy>
+			</pielegniarka>
+			<pielegniarka nadgodziny="false" oddzial="Chirurgia">
+				<imie>Agnieszka</imie>
+				<nazwisko>Niewiadoma</nazwisko>
+				<staz>10</staz>
+				<godzinyPracy>17.00-7.00</godzinyPracy>
+			</pielegniarka>
+			<pielegniarka nadgodziny="true" oddzial="Kardiologia">
+				<imie>Janina</imie>
+				<nazwisko>Niecna</nazwisko>
+				<staz>12</staz>
+				<godzinyPracy>17.00-7.00</godzinyPracy>
+			</pielegniarka>
+		</pielegniarki>
+	</pracownicy>
+
+	<pacjenci>
+		<pacjent oddzial="Choroby Wewnetrzne" plec="m">
+			<imie>Jerzy</imie>
+			<nazwisko>Nowak</nazwisko>
+			<wiek>67</wiek>
+			<leki>
+				<lek>
+					<nazwa>Buderin</nazwa>
+					<dawka>3 x 1 tabletka</dawka>
+				</lek>
+				<lek>
+					<nazwa>Filytol</nazwa>
+					<dawka>1 x 1 tabletka</dawka>
+				</lek>
+			</leki>
+		</pacjent>
+		<pacjent oddzial="Kardiologia" plec="k">
+			<imie>Zofia</imie>
+			<nazwisko>Papacka</nazwisko>
+			<wiek>60</wiek>
+			<leki>
+				<lek>
+					<nazwa>Meriozyna</nazwa>
+					<dawka>2 x 1 tabletka</dawka>
+				</lek>
+				<lek>
+					<nazwa>Buderin</nazwa>
+					<dawka>2 x 1 tabletka</dawka>
+				</lek>
+			</leki>
+		</pacjent>
+		
+	<pacjent oddzial="Choroby Wewnetrzne" plec="m">
+			<!--NOWY PACJENT--><imie>Nowy</imie>
+			<nazwisko>Pacjent</nazwisko>
+			<wiek>45</wiek>
+			<leki>
+				<lek>
+					<nazwa>Buderin</nazwa>
+					<dawka>3 x 1 tabletka</dawka>
+				</lek>
+				<lek>
+					<nazwa>Filytol</nazwa>
+					<dawka>1 x 1 tabletka</dawka>
+				</lek>
+			</leki>
+		<choroba>Straszne Chorobsko</choroba></pacjent></pacjenci>
+
+	<sprzet>
+		<rodzaje>
+			<diagnostyka>
+				<produkt producent="GC MEDIS">
+					<model>CERA-CHECK</model>
+					<rocznik>2014</rocznik>
+				</produkt>
+				<produkt producent="PROMEDICA">
+					<model>UASure</model>
+					<rocznik>2012</rocznik>
+
+				</produkt>
+				<produkt producent="CU MEDICS">
+					<model>iPAD SP1</model>
+					<rocznik>2017</rocznik>
+				</produkt>
+			</diagnostyka>
+			<chirurgia>
+				<produkt producent="HEARTSTINE">
+					<model>SAMARITHAN PAD</model>
+					<rocznik>2010</rocznik>
+				</produkt>
+				<produkt producent="PROMEDICA">
+					<model>ZOLL AED PLUS</model>
+					<rocznik>2012</rocznik>
+				</produkt>
+				<produkt producent="CSMEDICUS">
+					<model>HALO355</model>
+					<rocznik>2015</rocznik>
+				</produkt>
+			</chirurgia>
+			<komputery>
+				<stacjonarne>
+					<produkt producent="Dell" stan="dobry">
+						<model>Imagine</model>
+						<rocznik>2012</rocznik>
+					</produkt>
+					<produkt producent="Acer" stan="dobry">
+						<model>Vostro</model>
+						<rocznik>2013</rocznik>
+					</produkt>
+				</stacjonarne>
+				<laptopy>
+					<produkt producent="Dell" stan="zly">
+						<model>Matebook</model>
+						<rocznik>2008</rocznik>
+					</produkt>
+					<produkt producent="Acer" stan="zly">
+						<model>Matebook</model>
+						<rocznik>2005</rocznik>
+					</produkt>
+				</laptopy>
+			</komputery>
+		</rodzaje>
+	</sprzet>
+</szpital>
