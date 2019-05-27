@@ -66,7 +66,7 @@ def usunPacjenta(_nazwisko):
             szpital.getElementsByTagName("pacjenci")[0].removeChild(p)
 
 def ilePacjentow():
-    if pacjenci.hasChildNodes():
+    if szpital.getElementsByTagName("pacjenci")[0].hasChildNodes():
         return pacjenci.length
 
 
